@@ -1,24 +1,43 @@
+@percentage: 12%;
 
-html, body, p, h1, h2, h3, h4, h5, h6, ol, ul, li {
-
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+li {
     margin: 0;
-
     padding: 0;
-
     font-family: 'ubuntu', 'Microsoft Yahei UI', sans-serief;
-
     font-size: 20px;
 }
-html, body {
+
+div {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+html,
+body {
     height: 100%;
     width: 100%;
-    background-color: #cabedf;
-    background-image: -moz-radial-gradient(contain, rgba(240, 240, 240, 0.8), rgba(180, 180, 180, 0));
-    background-image: -webkit-radial-gradient(contain, rgba(240, 240, 240, 0.8), rgba(180, 180, 180, 0));
-    background-image: -ms-radial-gradient(contain, rgba(240, 240, 240, 0.8), rgba(180, 180, 180, 0));
-    background-image: -o-radial-gradient(contain, rgba(240, 240, 240, 0.8), rgba(180, 180, 180, 0));
-    background-image: radial-gradient(contain, rgba(240, 240, 240, 0.8), rgba(180, 180, 180, 0));
+    background-color: #01b7e4;
+    background-image: -webkit-radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
+    background-image: -moz-radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
+    background-image: -ms-radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
+    background-image: -o-radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
+    background-image: radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
 }
+
 .main {
     width: 100%;
     height: 100%;
@@ -33,74 +52,79 @@ html, body {
         color: #322322;
         .main-ltr-m {
             font-size: 80px;
+            color: #ffdfd0;
+            text-shadow: 0 0 2px #333;
             margin: 5px 20px 10px;
             display: inline-block;
+            background-color: #ffdcc0;
             width: 90px;
             height: 90px;
             border-radius: 45px;
             overflow: hidden;
-            box-shadow: 5px 5px 10px 2px #323310;
+            box-shadow: 5px 5px 10px 2px rgba(40, 35, 30, 0.8);
             z-index: 2;
-       }
-       .main-ltr-bar{
-       	width: 90%;
-       	max-width: 400px;
-       	z-index: 1;
-       	margin: auto;
-       	height: 4px;
-       	border-radius: 3px;
-       	background: #dedede;
-       	border: solid 1px #bababa;
-       	position: relative;
-       	.main-ltr-progress{
-       		background-color: #209cfa;
-       		opacity: 0.5;
-       		width: 5%;
-			height: 4px;
-			border-radius: 2px;
-			position: absolute;
-			left: 0;
-       	}
-       	.main-ltr-indicator{
-       		width: 30px;
-       		text-align: center;
-       		font-size: 12px;
-       		line-height: 12px;
-       		border-radius: 6px;
-       		background-color: #fa7c30;
-       		opacity: 0.6;
-       		color: #fff;
-       		text-shadow: 0 0 1px rgba(220,220,220,0.3);
-       		margin-left: -15px;
-       		position: absolute;
-       		top: -5px;
-       		height: 13px;
-       		left: 8%;
-       		&::before{
-       			content: '8%';
-       		}
-       	}
-       }
-	  }
-	  .main-content {
-	      width: 100%;
-	      top: 50%;
-	      position: absolute;
-	      .main-status {
-	          text-align: right;
-	          width: 90%;
-	          max-width: 400px;
-	          color: #5c5c5c;
-	          margin: auto;
-	          div, span, p {
-	              display: block;
-	         }
-	    }
-	    .main-me {
-	    	padding: 20px 0;
-	    	font-size: 0.6em;
-	        text-align: center;
-	        color: #7a7a7a;
-	   }
-	}
+        }
+        .main-ltr-bar {
+            width: 90%;
+            max-width: 400px;
+            z-index: 1;
+            margin: auto;
+            height: 4px;
+            border-radius: 3px;
+            background: #dedede;
+            border: solid 1px #bababa;
+            position: relative;
+            .main-ltr-progress {
+                background-color: #01b7e4;
+                opacity: 0.5;
+                width: @percentage;
+                height: 4px;
+                border-radius: 2px;
+                position: absolute;
+                left: 0;
+            }
+            .main-ltr-indicator {
+                width: 30px;
+                text-align: center;
+                font-size: 12px;
+                line-height: 12px;
+                border-radius: 6px;
+                background-color: #fabc70;
+                opacity: 0.9;
+                color: #fff;
+                text-shadow: 0 0 1px rgba(220, 220, 220, 0.3);
+                margin-left: -15px;
+                position: absolute;
+                top: -5px;
+                height: 13px;
+                left: @percentage;
+                &::before {
+                    content: "@{percentage}";
+                }
+            }
+        }
+    }
+    .main-content {
+        width: 100%;
+        top: 50%;
+        position: absolute;
+        .main-status {
+            text-align: right;
+            width: 90%;
+            max-width: 400px;
+            color: #5c5c5c;
+            margin: auto;
+            div,
+            span,
+            p {
+                display: block;
+            }
+        }
+        .main-me {
+            padding: 20px 0;
+            font-size: 0.6em;
+            text-align: center;
+            color: #7a7a7a;
+        }
+    }
 }
