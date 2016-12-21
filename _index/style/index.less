@@ -1,5 +1,6 @@
-@percentage: 12%;
-
+@percentage: 14%;
+@import (inline) 'include/normalize.css';
+@import (less) 'include/font.less';
 html,
 body,
 p,
@@ -14,11 +15,13 @@ ul,
 li {
     margin: 0;
     padding: 0;
-    font-family: 'ubuntu', 'Microsoft Yahei UI', sans-serief;
+    font-family: 'Aref Ruqaa', 'Microsoft Yahei UI', sans-serief;
     font-size: 20px;
 }
 
-div {
+div,
+span,
+section {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -38,6 +41,15 @@ body {
     background-image: radial-gradient(cover, rgba(255, 245, 240, 1) 35%, rgba(240, 240, 240, 0.6) 70%, rgba(255, 255, 255, 0) 110%);
 }
 
+@keyframes main-loader-progress {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
 .main {
     width: 100%;
     height: 100%;
@@ -51,6 +63,7 @@ body {
         font-size: 30px;
         color: #322322;
         .main-ltr-m {
+            font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 80px;
             color: #ffdfd0;
             text-shadow: 0 0 2px #333;
@@ -76,12 +89,49 @@ body {
             position: relative;
             .main-ltr-progress {
                 background-color: #01b7e4;
-                opacity: 0.5;
                 width: @percentage;
                 height: 4px;
                 border-radius: 2px;
                 position: absolute;
                 left: 0;
+                overflow: hidden;
+                .main-ltr-progress-pix {
+                    position: absolute;
+                    display: block;
+                    content: ' ';
+                    left: -10px;
+                    height: 4px;
+                    width: 4px;
+                    opacity: 0.5;
+                    border-radius: 2px;
+                    animation: main-loader-progress infinite ease-in-out;
+                    &:nth-child(3n + 1) {
+                        animation-delay: 0.93s * @percentage;
+                    }
+                    &:nth-child(3n + 2) {
+                        animation-delay: 0.46s * @percentage;
+                    }
+                    &:nth-child(4n){animation-duration: 0.17s * @percentage}
+                    &:nth-child(4n + 1){animation-duration: 0.15s * @percentage}
+                    &:nth-child(4n + 2){animation-duration: 0.21s * @percentage}
+                    &:nth-child(4n + 3){animation-duration: 0.19s * @percentage}
+
+                    &:nth-child(5n) {
+                        background: #ff5;
+                    }
+                    &:nth-child(5n + 1) {
+                        background: #f55;
+                    }
+                    &:nth-child(5n + 2) {
+                        background: #5f5;
+                    }
+                    &:nth-child(5n + 3) {
+                        background: #55f;
+                    }
+                    &:nth-child(5n + 4) {
+                        background: #f5f;
+                    }
+                }
             }
             .main-ltr-indicator {
                 width: 30px;
